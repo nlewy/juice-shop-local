@@ -100,4 +100,5 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         sarifReportDir: ./codeql_report/
+        outputDir: ./codeql_report/
         
