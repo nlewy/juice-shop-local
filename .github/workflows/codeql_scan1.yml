@@ -88,8 +88,6 @@ jobs:
         category: "/language:${{matrix.language}}"
         output: ./codeql_report/
 
-  
-              
     - name: "Generate Security Report"
       uses: peter-murray/github-security-report-action@v2
       with:
@@ -100,6 +98,8 @@ jobs:
 
     - name: GitHub - Security Report Generator
       uses: PCStefan/github-security-report-action@v3.0.3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
   
   
