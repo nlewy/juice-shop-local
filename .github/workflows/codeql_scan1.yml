@@ -86,17 +86,18 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+        output: ./codeql_report/
         sarif-output: results.sarif
     
 
     - uses: actions/upload-artifact@v3
       with:
         name: CodeQLSARIF
-        path: ${{ steps.analyze.outputs.sarif-output }}
+        path: ./codeql_report/
               
     - name: "Generate Security Report"
       uses: peter-murray/github-security-report-action@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        sarifReportDir: ${{ steps.analyze.outputs.sarif-output }}
+        sarifReportDir: ./codeql_report/
         
