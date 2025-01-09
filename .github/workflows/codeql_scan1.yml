@@ -97,14 +97,15 @@ jobs:
         sarifReportDir: ./codeql_report/
         outputDir: ./codeql_report/
 
-    - name : sarif-to-csv
-      uses: mr-sherman/sarif-to-csv-action@v2
-      with:
-        input-file: './codeql_report/results.sarif'
-        output-file: './codeql_report/results.csv'
 
+    - name: GitHub - Security Report Generator
+      uses: PCStefan/github-security-report-action@v3.0.3
+
+  
   
     - uses: actions/upload-artifact@v3
       with:
         name: CodeQLSARIF
         path: ./codeql_report/
+
+            
