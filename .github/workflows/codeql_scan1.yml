@@ -96,7 +96,14 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         sarifReportDir: ./codeql_report/
         outputDir: ./codeql_report/
-        
+
+    - name : sarif-to-csv
+      uses: mr-sherman/sarif-to-csv-action@v2
+      with:
+        input-file: './codeql_report/results.sarif'
+        output-file: './codeql_report/results.csv'
+
+  
     - uses: actions/upload-artifact@v3
       with:
         name: CodeQLSARIF
