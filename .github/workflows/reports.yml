@@ -1,11 +1,11 @@
-  name: "CodeQL Reports"
+name: "CodeQL Reports "
 
-on:
+on: 
   workflow_dispatch:
-
+  
 jobs:
-  analyze:
-    name: Reports
+  Reports:
+    name: "Reports"
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -16,7 +16,7 @@ jobs:
       matrix:
         language: [ 'javascript-typescript' ]
     steps:
-    - name: Checkout repository
+    - name: "Checkout repository"
       uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac #v4.0.0
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
@@ -26,7 +26,7 @@ jobs:
         config: |
           paths-ignore:
             - 'data/static/codefixes'
-    - name: Generate Security Report
+    - name: "Generate Security Report"
       uses: peter-murray/github-security-report-action@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
