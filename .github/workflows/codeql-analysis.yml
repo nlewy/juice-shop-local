@@ -34,5 +34,11 @@ jobs:
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
-        sarif_file: results.sarif
+        sarif_file: /results.sarif
+    - name: "Generate Security Report"
+      uses: peter-murray/github-security-report-action@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        sarifReportDir: /
+        outputDir: /
 
