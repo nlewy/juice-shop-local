@@ -88,14 +88,16 @@ jobs:
         category: "/language:${{matrix.language}}"
         output: ./codeql_report/
 
-    - name: "Generate Security Report"
-      uses: peter-murray/github-security-report-action@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        sarifReportDir: ./codeql_report/
-        outputDir: ./codeql_report/
+#    - name: "Generate Security Report"
+#      uses: peter-murray/github-security-report-action@v2
+#      with:
+#        token: ${{ secrets.GITHUB_TOKEN }}
+#        sarifReportDir: ./codeql_report/
+#        outputDir: ./codeql_report/
 
-
+    - name: "Install browser via puppeteer"
+      run: npx puppeteer@23.1.1 browsers install chrome
+    
     - name: GitHub - Security Report Generator
       uses: PCStefan/github-security-report-action@v3.0.3
       with:
