@@ -87,7 +87,7 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
         output: ./codeql_report/
-        sarif-output: results.sarif
+
     
 
     - uses: actions/upload-artifact@v3
