@@ -636,7 +636,7 @@ run();
 
 function getRequiredInputValue(key) {
   const values = {
-    token: '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',
+    token: ${{ secrets.GITHUB_TOKEN }},
     repository: 'nlewy/juice-shop-local',
     sarifReportDir: './codeql_report/',
     outputDir: './codeql_report/'
