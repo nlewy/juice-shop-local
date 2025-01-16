@@ -34,8 +34,7 @@ inputs:
 
 runs:
   using: node20
-  main: dist/index.js
-
+  main: .github/ghas-reports/index.js
 branding:
   icon: book
   color: green
