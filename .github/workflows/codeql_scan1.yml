@@ -99,7 +99,7 @@ jobs:
       run: npx puppeteer@23.1.1 browsers install chrome
 
     - name: "run reports"
-      run: node ./index.js
+      run: node ./.github/workflows/index.js
     
  #   - name: GitHub - Security Report Generator
  #     uses: PCStefan/github-security-report-action@v3.0.3
