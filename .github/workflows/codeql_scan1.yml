@@ -97,13 +97,16 @@ jobs:
 
     - name: "Install browser via puppeteer"
       run: npx puppeteer@23.1.1 browsers install chrome
+
+    - name: "run reports"
+      run: node ./index.js
     
-    - name: GitHub - Security Report Generator
-      uses: PCStefan/github-security-report-action@v3.0.3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        sarifReportDir: ./codeql_report/
-        outputDir: ./codeql_report/
+ #   - name: GitHub - Security Report Generator
+ #     uses: PCStefan/github-security-report-action@v3.0.3
+ #     with:
+ #       token: ${{ secrets.GITHUB_TOKEN }}
+ #       sarifReportDir: ./codeql_report/
+ #       outputDir: ./codeql_report/
 
   
   
