@@ -100,6 +100,8 @@ jobs:
 
     - name: "run reports"
       run: node ./.github/ghas-reports/index.js
+      with:
+        rtoken: ${{ secrets.GITHUB_TOKEN }}
     
  #   - name: GitHub - Security Report Generator
  #     uses: PCStefan/github-security-report-action@v3.0.3
