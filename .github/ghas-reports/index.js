@@ -638,8 +638,8 @@ function getRequiredInputValue(key) {
   const values = {
     token: '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',
     repository: 'nlewy/juice-shop-local',
-    sarifReportDir: './CodeQLSARIF',
-    outputDir: './output'
+    sarifReportDir: './codeql_report/',
+    outputDir: './codeql_report/'
   };
   const value = values[key];
   if (!value) {
