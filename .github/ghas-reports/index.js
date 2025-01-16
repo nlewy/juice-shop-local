@@ -634,20 +634,9 @@ run();
 }
 */
 
-function getRequiredInputValue(key) {
-  const values = {
-    token: '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' ,
-    repository: 'nlewy/juice-shop-local',
-    sarifReportDir: './codeql_report/',
-    outputDir: './codeql_report/'
-  };
-  const value = values[key];
-  if (!value) {
-    throw new Error(`Missing required input: ${key}`);
-  }
-  return value;
+function getRequiredInputValue(key: string): string {
+  return core.getInput(key, {required: true});
 }
-
 
 /***/ }),
 
