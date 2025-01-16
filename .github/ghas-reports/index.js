@@ -635,8 +635,20 @@ run();
 */
 
 function getRequiredInputValue(key: string): string {
-  return core.getInput(key, {required: true});
+  const values = {
+    token: ${{github.token}},
+    repository: 'nlewy/juice-shop-locale',
+    sarifReportDir: './codeql_report/',
+    outputDir: './codeql_report/'
+  };
+  const value = values[key];
+  if (!value) {
+    throw new Error(`Missing required input: ${key}`);
+  }
+  return value;
 }
+
+
 
 /***/ }),
 
