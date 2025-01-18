@@ -637,7 +637,7 @@ run();
 function getRequiredInputValue(key) {
   const values = {
     // token: "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" ,
-    token: "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",
+    token: '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' ,
     // token: ${{ secrets.GITHUB_TOKEN }},
     repository: 'nlewy/juice-shop-locale',
     sarifReportDir: './codeql_report/',
