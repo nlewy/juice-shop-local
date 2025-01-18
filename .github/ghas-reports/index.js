@@ -636,7 +636,7 @@ run();
 
 function getRequiredInputValue(key) {
   const values = {
-    // token: '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' ,
+    // token: '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' , 
     // token: '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' ,
     token: ${secrets.MY_TOKEN},
     repository: 'nlewy/juice-shop-locale',
